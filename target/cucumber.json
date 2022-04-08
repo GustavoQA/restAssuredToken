@@ -1,0 +1,131 @@
+[
+  {
+    "line": 3,
+    "elements": [
+      {
+        "start_timestamp": "2022-04-08T04:28:49.098Z",
+        "line": 6,
+        "name": "generacion de token de sesion",
+        "description": "",
+        "id": "autenticacion-para-ingreso-al-portal;generacion-de-token-de-sesion",
+        "type": "scenario",
+        "keyword": "Escenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 15000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "que configuro las cabeceras del servicio",
+            "match": {
+              "location": "definitions.tokenDefinition.queConfiguroLasCabecerasDelServicio(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "parametro",
+                  "valor"
+                ]
+              },
+              {
+                "cells": [
+                  "x-rapidapi-host",
+                  "bravenewcoin.p.rapidapi.com"
+                ]
+              },
+              {
+                "cells": [
+                  "x-rapidapi-key",
+                  "c8f042a2b0msh5ccc719e499ade9p1d3beejsne55a03735ed0"
+                ]
+              }
+            ],
+            "keyword": "Dado "
+          },
+          {
+            "result": {
+              "duration": 7269000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "que configuro el bodyrequest del servicio",
+            "match": {
+              "location": "definitions.tokenDefinition.queConfiguroElBodyrequestDelServicio(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "audiencia",
+                  "id_cliente",
+                  "grant_type"
+                ]
+              },
+              {
+                "cells": [
+                  "https://api.bravenewcoin.com",
+                  "oCdQoZoI96ERE9HY3sQ7JmbACfBf55RY",
+                  "client_credentials"
+                ]
+              }
+            ],
+            "keyword": "Dado "
+          },
+          {
+            "result": {
+              "duration": 4000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "valido que la respuesta es \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"200\"",
+                  "offset": 27
+                }
+              ],
+              "location": "definitions.tokenDefinition.validoQueLaRespuestaEs(java.lang.String)"
+            },
+            "keyword": "Y "
+          },
+          {
+            "result": {
+              "duration": 1262000000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "Guardo el token de sesion",
+            "match": {
+              "location": "definitions.tokenDefinition.guardoElTokenDeSesion()"
+            },
+            "keyword": "Entonces "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@AUTENTICACION"
+          },
+          {
+            "name": "@POST-TOKEN"
+          }
+        ]
+      }
+    ],
+    "name": "autenticacion para ingreso al portal",
+    "description": "",
+    "id": "autenticacion-para-ingreso-al-portal",
+    "keyword": "Característica",
+    "uri": "file:src/test/resources/features/TokenSesion.feature",
+    "tags": [
+      {
+        "name": "@AUTENTICACION",
+        "type": "Tag",
+        "location": {
+          "line": 2,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

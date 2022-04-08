@@ -1,0 +1,13 @@
+support\requestResource.class
+support\requestToken.class
+definitions\tokenDefinition.class
+objects\payloadUser.class
+definitions\registroUsuarios.class
+support\apiHelper.class
+objects\payloadToken.class
+definitions\listarRecursoDefinition.class
+objects\headersToken.class
+support\runTest.class
+support\requestRegister.class
+definitions\servicioDefinition.class
+support\requestUser.class
