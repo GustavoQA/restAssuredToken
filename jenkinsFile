@@ -10,13 +10,13 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git 'https://github.com/GustavoQA/restAssuredToken.git'
+                git 'https://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@github.com/GustavoQA/restAssuredToken.git'
 
                 // Run Maven on a Unix agent.
                 //sh "mvn -Dmaven.test.failure.ignore=true clean package"
 
                 // To run Maven on a Windows agent, use
-                 bat "mvn clean verify "-Dcucumber.options=--tags @AUTENTICACION""
+                 bat "mvn clean verify -Dcucumber.options=--tags @AUTENTICACION "
             }
 
             post {
