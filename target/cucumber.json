@@ -3,7 +3,7 @@
     "line": 3,
     "elements": [
       {
-        "start_timestamp": "2022-04-08T04:28:49.098Z",
+        "start_timestamp": "2022-04-17T04:45:40.527Z",
         "line": 6,
         "name": "generacion de token de sesion",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 15000000,
+              "duration": 10000000,
               "status": "passed"
             },
             "line": 7,
@@ -45,7 +45,7 @@
           },
           {
             "result": {
-              "duration": 7269000000,
+              "duration": 6515000000,
               "status": "passed"
             },
             "line": 11,
@@ -91,7 +91,7 @@
           },
           {
             "result": {
-              "duration": 1262000000,
+              "duration": 1552000000,
               "status": "passed"
             },
             "line": 15,
