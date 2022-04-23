@@ -7,7 +7,7 @@ pipeline {
     }
 
     stages {
-        stage('Construccion') {
+        stage('Build') {
             steps {
                 // Get some code from a GitHub repository
                 git 'https://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@github.com/GustavoQA/restAssuredToken.git'
@@ -18,15 +18,14 @@ pipeline {
                 // To run Maven on a Windows agent, use
                  bat 'mvn clean verify "-Dcucumber.options=--tags @AUTENTICACION"'
             }
-            stage('Generar Reporte Cucumber Html') {
-                        steps {
-                            cucumber buildStatus: "UNSTABLE",
-                                    fileIncludePattern: '**/cucumber.json',
-                                    jsonReportDirectory: 'target'
-                        }
+         stage('Generate HTML report') {
+            steps {
+                cucumber buildStatus: "UNSTABLE",
+                        fileIncludePattern: '**/cucumber.json',
+                        jsonReportDirectory: 'target'
+            }
 
-                    }
-
+        }
             post {
                 // If Maven was able to run the tests, even if some of the test
                 // failed, record the test results and archive the jar file.
