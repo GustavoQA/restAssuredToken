@@ -7,7 +7,7 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+        stage(' Fase integracion construcion del script ') {
             steps {
                 // Get some code from a GitHub repository
                 git 'https://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@github.com/GustavoQA/restAssuredToken.git'
@@ -19,17 +19,10 @@ pipeline {
                  bat 'mvn clean verify "-Dcucumber.options=--tags @AUTENTICACION"'
             }
 
-            post {
-                // If Maven was able to run the tests, even if some of the test
-                // failed, record the test results and archive the jar file.
-                success {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
-                }
-            }
+
         }
 
-           stage('Generate HTML report') {
+           stage('Fase Generar reporte con cucumber') {
                     steps {
                         cucumber buildStatus: "UNSTABLE",
                                 fileIncludePattern: '**/cucumber.json',
@@ -37,6 +30,15 @@ pipeline {
                     }
 
                 }
+
+                post {
+                                // If Maven was able to run the tests, even if some of the test
+                                // failed, record the test results and archive the jar file.
+                                success {
+                                    junit '**/target/surefire-reports/TEST-*.xml'
+                                    archiveArtifacts 'target/*.jar'
+                                }
+                            }
 
     }
 
