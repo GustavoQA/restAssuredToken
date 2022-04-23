@@ -18,14 +18,7 @@ pipeline {
                 // To run Maven on a Windows agent, use
                  bat 'mvn clean verify "-Dcucumber.options=--tags @AUTENTICACION"'
             }
-         stage('Generate HTML report') {
-            steps {
-                cucumber buildStatus: "UNSTABLE",
-                        fileIncludePattern: '**/cucumber.json',
-                        jsonReportDirectory: 'target'
-            }
 
-        }
             post {
                 // If Maven was able to run the tests, even if some of the test
                 // failed, record the test results and archive the jar file.
@@ -35,6 +28,15 @@ pipeline {
                 }
             }
         }
+
+           stage('Generate HTML report') {
+                    steps {
+                        cucumber buildStatus: "UNSTABLE",
+                                fileIncludePattern: '**/cucumber.json',
+                                jsonReportDirectory: 'target'
+                    }
+
+                }
 
     }
 
