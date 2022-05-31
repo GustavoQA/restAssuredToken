@@ -10,7 +10,7 @@ pipeline {
         stage(' Fase integracion construcion del script ') {
             steps {
                 // Get some code from a GitHub repository
-                git 'https://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@github.com/GustavoQA/restAssuredToken.git'
+                git 'https://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@github.com/GustavoQA/restAssuredToken.git'
 
                 // Run Maven on a Unix agent.
                 //sh "mvn -Dmaven.test.failure.ignore=true clean package"
