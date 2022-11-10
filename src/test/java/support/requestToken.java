@@ -11,6 +11,7 @@ public class requestToken {
     headersToken header;
     String valor;
     String parametro;
+    String autorizador;
 
     public requestToken() {
         api = new apiHelper();
@@ -36,6 +37,11 @@ public class requestToken {
     public String GeneraCabecera2(String valor) {
         return this.valor = valor;
 
+    }
+
+    public String GeneraCabecera3(String autorizador) {
+
+        return this.autorizador = autorizador;
     }
 
 

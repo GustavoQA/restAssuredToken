@@ -3,20 +3,18 @@
     "line": 3,
     "elements": [
       {
-        "start_timestamp": "2022-04-17T04:45:40.527Z",
-        "line": 6,
-        "name": "generacion de token de sesion",
+        "line": 5,
+        "name": "Genero el token de sesion",
         "description": "",
-        "id": "autenticacion-para-ingreso-al-portal;generacion-de-token-de-sesion",
-        "type": "scenario",
-        "keyword": "Escenario",
+        "type": "background",
+        "keyword": "Antecedentes",
         "steps": [
           {
             "result": {
-              "duration": 10000000,
+              "duration": 13000000,
               "status": "passed"
             },
-            "line": 7,
+            "line": 6,
             "name": "que configuro las cabeceras del servicio",
             "match": {
               "location": "definitions.tokenDefinition.queConfiguroLasCabecerasDelServicio(io.cucumber.datatable.DataTable)"
@@ -45,10 +43,10 @@
           },
           {
             "result": {
-              "duration": 6515000000,
+              "duration": 11013000000,
               "status": "passed"
             },
-            "line": 11,
+            "line": 10,
             "name": "que configuro el bodyrequest del servicio",
             "match": {
               "location": "definitions.tokenDefinition.queConfiguroElBodyrequestDelServicio(io.cucumber.datatable.DataTable)"
@@ -69,14 +67,14 @@
                 ]
               }
             ],
-            "keyword": "Dado "
+            "keyword": "Y "
           },
           {
             "result": {
               "duration": 4000000,
               "status": "passed"
             },
-            "line": 14,
+            "line": 13,
             "name": "valido que la respuesta es \"200\"",
             "match": {
               "arguments": [
@@ -91,35 +89,57 @@
           },
           {
             "result": {
-              "duration": 1552000000,
+              "duration": 1108000000,
               "status": "passed"
             },
-            "line": 15,
+            "line": 14,
             "name": "Guardo el token de sesion",
             "match": {
               "location": "definitions.tokenDefinition.guardoElTokenDeSesion()"
             },
-            "keyword": "Entonces "
+            "keyword": "Y "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-11-05T07:59:46.754Z",
+        "line": 17,
+        "name": "mostrar el token",
+        "description": "",
+        "id": "ingreso-al-portal-web-con-autorizacion;mostrar-el-token",
+        "type": "scenario",
+        "keyword": "Escenario",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "muestro el token de sesion",
+            "match": {
+              "location": "definitions.tokenDefinition.muestroElTokenDeSesion()"
+            },
+            "keyword": "Dado "
           }
         ],
         "tags": [
           {
-            "name": "@AUTENTICACION"
+            "name": "@API-REST-ASSURED"
           },
           {
-            "name": "@POST-TOKEN"
+            "name": "@Consumo-API-BS"
           }
         ]
       }
     ],
-    "name": "autenticacion para ingreso al portal",
+    "name": "Ingreso al portal Web con autorizacion",
     "description": "",
-    "id": "autenticacion-para-ingreso-al-portal",
+    "id": "ingreso-al-portal-web-con-autorizacion",
     "keyword": "Característica",
     "uri": "file:src/test/resources/features/TokenSesion.feature",
     "tags": [
       {
-        "name": "@AUTENTICACION",
+        "name": "@API-REST-ASSURED",
         "type": "Tag",
         "location": {
           "line": 2,

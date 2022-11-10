@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         glue = "definitions",
         plugin = {"json:target/cucumber.json"},
         //"pretty","html:target/site/cucumber-pretty",
-        tags = "@AUTENTICACION")
+        tags = "@API-REST-ASSURED")
 //json:target/cucumber-report/cucumber.json
 
 public class runTest {
