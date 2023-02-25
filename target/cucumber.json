@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 13000000,
+              "duration": 8000000,
               "status": "passed"
             },
             "line": 6,
@@ -43,7 +43,7 @@
           },
           {
             "result": {
-              "duration": 11013000000,
+              "duration": 10197000000,
               "status": "passed"
             },
             "line": 10,
@@ -89,7 +89,7 @@
           },
           {
             "result": {
-              "duration": 1108000000,
+              "duration": 997000000,
               "status": "passed"
             },
             "line": 14,
@@ -102,7 +102,7 @@
         ]
       },
       {
-        "start_timestamp": "2022-11-05T07:59:46.754Z",
+        "start_timestamp": "2023-02-25T00:40:50.098Z",
         "line": 17,
         "name": "mostrar el token",
         "description": "",
@@ -112,6 +112,7 @@
         "steps": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 18,
