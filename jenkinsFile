@@ -15,17 +15,17 @@ pipeline {
         url: 'https://github.com/GustavoQA/restAssuredToken.git'
          }
     }
-    stage('Contruccion from GitHub'){
+    stage('Fase: Contruccion from GitHub'){
     steps{
          bat 'mvn clean install -DskipTests'
     }
    }
-    stage('Compile Code'){
+    stage('Fase: Compilar codigo'){
            steps{
                 bat 'mvn clean compile'
            }
        }
-        stage(' Fase: Ejecutar Pruebas Cucumber') {
+        stage(' Fase: Ejecutar Pruebas Automatizadas Cucumber') {
             steps {
                 // Get some code from a GitHub repository
                 //git 'https://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@github.com/GustavoQA/restAssuredToken.git'
@@ -38,11 +38,12 @@ pipeline {
             }
         }
 
-           stage('Fase: Reporte con cucumber') {
+           stage('Fase: Generar Reporte cucumber') {
                     steps {
                         cucumber buildStatus: "UNSTABLE",
                                 fileIncludePattern: '**/cucumber.json',
-                                jsonReportDirectory: 'target'
+                                jsonReportDirectory: 'target',
+                                plugin:'PrettyReport'
                     }
 
                     post {
