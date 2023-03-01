@@ -19,11 +19,12 @@ pipeline {
     steps{
          bat 'mvn clean install -DskipTests'
     }
+   }
     stage('Compile Code'){
-        steps{
-             bat 'mvn clean compile'
-        }
-    }
+           steps{
+                bat 'mvn clean compile'
+           }
+       }
         stage(' Fase: Ejecutar Pruebas Cucumber') {
             steps {
                 // Get some code from a GitHub repository
