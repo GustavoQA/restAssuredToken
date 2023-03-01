@@ -42,8 +42,8 @@ pipeline {
                     steps {
                         cucumber buildStatus: "UNSTABLE",
                                 fileIncludePattern: '**/cucumber.json',
-                                jsonReportDirectory: 'target',
-                                plugin:'JsonReport'
+                                jsonReportDirectory: 'target'
+
                     }
 
                     post {
