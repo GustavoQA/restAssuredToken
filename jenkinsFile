@@ -7,13 +7,18 @@ pipeline {
     }
 
     stages {
-    stage('Checkout from GitHub'){
-    steps{
+        stage('Checkout from GitHub'){
+        steps{
      // Get some code from a GitHub repository
         git branch: 'master',
         credentialsId: 'GustavoQA',
         url: 'https://github.com/GustavoQA/restAssuredToken.git'
          }
+    }
+    stage('Build from GitHub'){
+    steps{
+         bat 'mvn clean install -DskipTests'
+    }
     }
         stage(' Fase integracion construcion del script ') {
             steps {
@@ -26,8 +31,6 @@ pipeline {
                 // To run Maven on a Windows agent, use
                  bat 'mvn clean verify "-Dcucumber.options=--tags @API-REST-ASSURED"'
             }
-
-
         }
 
            stage('Fase Generar reporte con cucumber') {
