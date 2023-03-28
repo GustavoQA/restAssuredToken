@@ -13,14 +13,14 @@ pipeline {
     stages {
         stage('Checkout from GitHub'){
         steps{
-        println('****** CHECK OUT CODE FROM GIT REPO ******')
+
      // Get some code from a GitHub repository
         git branch: 'master',
         credentialsId: 'GustavoQA',
         url: 'https://github.com/GustavoQA/restAssuredToken.git'
          }
 
-       println('****** CHECK OUT CODE FROM GIT REPO !!COMPLETE!! ******')
+
     }
     stage('Fase: Contruccion from GitHub'){
     steps{
