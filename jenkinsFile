@@ -13,9 +13,9 @@ pipeline {
     stages {
         stage('Checkout from GitHub'){
         steps{
-
+         println('********Checking out from GitHub repository********')
         checkout scm
-
+         println('********Checking out from GitHub repository COMPLETED ********')
      // Get some code from a GitHub repository
        // git branch: 'master',
        // credentialsId: 'GustavoQA',
