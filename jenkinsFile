@@ -6,14 +6,21 @@ pipeline {
         maven "maven_3.8.5"
     }
 
+    parameters {
+      string defaultValue: '@API_BRAVECOINS', description: 'Tags para pruebas ejemplos : @Regresion_01 @Certificacion', name: '@API-REST-ASSURED'
+    }
+
     stages {
         stage('Checkout from GitHub'){
         steps{
+        println('****** CHECK OUT CODE FROM GIT REPO ******')
      // Get some code from a GitHub repository
         git branch: 'master',
         credentialsId: 'GustavoQA',
         url: 'https://github.com/GustavoQA/restAssuredToken.git'
          }
+
+       println('****** CHECK OUT CODE FROM GIT REPO !!COMPLETE!! ******')
     }
     stage('Fase: Contruccion from GitHub'){
     steps{
@@ -27,14 +34,12 @@ pipeline {
        }
         stage(' Fase: Ejecutar Pruebas Automatizadas Cucumber') {
             steps {
-                // Get some code from a GitHub repository
-                //git 'https://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@github.com/GustavoQA/restAssuredToken.git'
 
                 // Run Maven on a Unix agent.
                 //sh "mvn -Dmaven.test.failure.ignore=true clean package"
 
                 // To run Maven on a Windows agent, use
-                 bat 'mvn clean verify "-Dcucumber.options=--tags @API-REST-ASSURED"'
+                 bat 'mvn clean verify "-Dcucumber.options=--tags ${name}"'
             }
         }
 

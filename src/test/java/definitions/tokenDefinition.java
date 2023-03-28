@@ -13,8 +13,8 @@ import java.util.List;
 import java.util.Map;
 
 public class tokenDefinition {
-    requestToken token;
-   public  String GuardoToken;
+    public requestToken token;
+    public String GuardoToken;
 
     public tokenDefinition() {
 
@@ -23,11 +23,11 @@ public class tokenDefinition {
 
     @Y("que configuro el bodyrequest del servicio")
     public void queConfiguroElBodyrequestDelServicio(DataTable dt) {
-        List<Map<String,String>> data = dt.asMaps(String.class,String.class);
-        for (int i = 0; i <data.size() ; i++) {
-            token.GenerarTokeen(data.get(i).get("audiencia"),data.get(i).get("id_cliente"),data.get(i).get("grant_type"));
+        List<Map<String, String>> data = dt.asMaps(String.class, String.class);
+        for (int i = 0; i < data.size(); i++) {
+            token.GenerarTokeen(data.get(i).get("audiencia"), data.get(i).get("id_cliente"), data.get(i).get("grant_type"));
             //validoQueLaRespuestaEs(data.get(i).get("codigo"));
-           // mostrarElListadoDeUsuarios();
+            // mostrarElListadoDeUsuarios();
 
         }
 
@@ -35,9 +35,8 @@ public class tokenDefinition {
 
     @Entonces("valido que la respuesta es {string}")
     public void validoQueLaRespuestaEs(String codigo) {
-        Assert.assertEquals(Integer.parseInt(codigo),requestToken.respuestaToken.statusCode());
+        Assert.assertEquals(Integer.parseInt(codigo), requestToken.respuestaToken.statusCode());
     }
-
 
 
     @Dado("que configuro las cabeceras del servicio")
@@ -66,14 +65,14 @@ public class tokenDefinition {
         ResponseBody bodyToken = requestToken.respuestaToken;
         JsonPath json = new JsonPath(bodyToken.asString());
         GuardoToken = json.getString("access_token");
-        System.out.println("se imprime el token guardado :"+GuardoToken);
+        System.out.println("se imprime el token guardado :" + GuardoToken);
 
     }
 
 
     @Dado("muestro el token de sesion")
     public void muestroElTokenDeSesion() {
-        System.out.println("este es el token guardado : "+GuardoToken);
+        System.out.println("este es el token guardado : " + GuardoToken);
 
     }
 }
