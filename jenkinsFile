@@ -15,9 +15,9 @@ pipeline {
         steps{
 
      // Get some code from a GitHub repository
-        git branch: 'master',
-        credentialsId: 'GustavoQA',
-        url: 'https://github.com/GustavoQA/restAssuredToken.git'
+       // git branch: 'master',
+       // credentialsId: 'GustavoQA',
+       // url: 'https://github.com/GustavoQA/restAssuredToken.git'
          }
 
 
