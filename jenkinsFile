@@ -24,9 +24,9 @@ pipeline {
 
 
     }
-    stage('Fase: Contruccion from GitHub'){
+    stage('Fase: Realizando el Build'){
     steps{
-         bat 'mvn clean install -DskipTests'
+         bat 'mvn clean package -DskipTests'
     }
    }
     stage('Fase: Compilar codigo'){
