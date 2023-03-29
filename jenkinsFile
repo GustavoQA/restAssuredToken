@@ -1,6 +1,7 @@
 pipeline {
     agent {
-       node{ 'nodos'
+       node{ 
+          label 'nodos'
        }  
     }
 
